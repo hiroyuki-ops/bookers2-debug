@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'searchs/search'
   get 'book_comments/create'
   get 'book_comments/destroy'
   root to: 'home#top'
@@ -16,5 +17,7 @@ Rails.application.routes.draw do
      get :following, :followers
     end
   end
+
+  get '/search' => 'search#search'
 
 end

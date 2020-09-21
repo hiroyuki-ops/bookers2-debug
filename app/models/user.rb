@@ -34,6 +34,14 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
+  def self.search(search)
+    if search
+      User.where(['content LIKE ?', "%#{search}%"])
+    else
+      User.all
+    end
+  end
+
   #バリデーションは該当するモデルに設定する。エラーにする条件を設定できる。
   validates :name, presence: true
   validates :name, length: {maximum: 20, minimum: 2}
