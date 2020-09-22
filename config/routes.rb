@@ -20,4 +20,7 @@ Rails.application.routes.draw do
 
   get '/search' => 'search#search'
 
+   post   '/favorite/:book_id' => 'favorites#create',   as: 'create'
+  delete '/favorite/:book_id' => 'favorites#destroy', as: 'destroy'
+
 end
