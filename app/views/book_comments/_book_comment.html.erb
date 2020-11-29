@@ -10,9 +10,9 @@
           <%= book_comment.content %>
 		</td>
 		<% if @user == current_user %>
-		<td>
-			<%= link_to "Destroy", book_book_comments_path(id: book_comment.id,book_id: @book.id), method: :delete, remote: true, class: "btn-sm btn-danger" %>
-		</td>
+			<td>
+				<%= link_to "Destroy", book_book_comments_path(id: book_comment.id,book_id: @book.id), method: :delete, remote: true, class: "btn-sm btn-danger" %>
+			</td>
 		<% end %>
 	</tr>
 <% end %>
